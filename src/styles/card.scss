@@ -1,0 +1,31 @@
+.card {
+  @include hover(background-color, $white);
+  @include hover(box-shadow, 0 2px 30.1px 4.9px rgba(13, 13, 13, 0.04));
+  padding: 35px var(--card-padding-hor);
+  width: 270px;
+  text-align: center;
+  background-color: $card-background;
+  border-radius: 5px;
+
+  &__pet-name {
+    @extend %font-georgia;
+    font-size: 20px;
+    color: $grey;
+    line-height: 2.25;
+  }
+
+  &__link {
+    --height: 48px;
+    @extend %buttons;
+    @include hover(background-color, $pink-grey);
+    margin: 0 auto;
+    width: 184px;
+    height: var(--height);
+    border: 2px solid $pink-grey;
+    border-radius: calc(var(--height) / 2);
+  }
+
+  &__image {
+    margin-bottom: 40px;
+  }
+}

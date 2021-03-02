@@ -1,0 +1,70 @@
+.footer {
+  @extend %section-vertical-paddings;
+  background-image: url("../images/footer_background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: center;
+
+  &__flex-wrapper {
+    display: flex;
+  }
+
+  &__contacts-online {
+    margin-right: 175px;
+  }
+
+  &__contacts-title {
+    @extend %section-title;
+    margin-bottom: 30px;
+    color: $white;
+  }
+
+  &__contact-info {
+    display: flex;
+    align-items: center;
+    &:nth-of-type(1) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__contact-text {
+    @extend %font-times;
+    @include hover(color, $white);
+    margin-left: 20px;
+    font-size: 20px;
+    color: $pink-grey;
+  }
+
+  &__contacts-online,
+  &__contacts-offline {
+    width: 300px;
+  }
+
+  @media (max-width: 1300px) {
+    &__contacts-online {
+      margin-right: 14vw;
+    }
+  }
+
+  @media (max-width: 1000px) {
+    & {
+      background-image: none;
+      @include gradient;
+    }
+  }
+
+  @media (max-width: 800px) {
+    &__contacts-online,
+    &__contacts-offline {
+      width: initial;
+    }
+
+    &__contacts-online {
+      margin: 0 0 30px;
+    }
+
+    &__flex-wrapper {
+      flex-direction: column;
+    }
+  }
+}

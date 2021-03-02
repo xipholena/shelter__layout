@@ -1,0 +1,29 @@
+.header {
+  &__flex-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 47px;
+    white-space: nowrap;
+    z-index: 1;
+  }
+
+  &__site-name {
+    @extend %font-georgia;
+    font-size: 32px;
+    color: $pink-grey;
+  }
+
+  &__logo-description {
+    @extend %font-arial;
+    font-size: 13px;
+    letter-spacing: 0.9px;
+    color: $white;
+  }
+}

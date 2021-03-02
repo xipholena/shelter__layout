@@ -1,0 +1,39 @@
+.slider {
+  &__wrapper {
+    margin: 0 auto;
+  }
+
+  &__control-prev,
+  &__control-next {
+    @include hover(background-color, $pink-grey);
+    position: absolute;
+    top: 50%;
+    display: block;
+    background-position: center center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid $pink-grey;
+    transform: translateY(-50%);
+    z-index: 1;
+  }
+
+  &__control-prev {
+    left: 0;
+    background-image: url("../images/pets_arrow-left.png");
+    background-repeat: no-repeat;
+  }
+
+  &__control-next {
+    right: 0;
+    background-image: url("../images/pets_arrow-right.png");
+    background-repeat: no-repeat;
+  }
+}
+.bx-next,
+.bx-prev{
+  width: 100%;
+  height: 100%;
+  display: block;
+  color: transparent;
+}

@@ -1,0 +1,53 @@
+.pets {
+  @extend %section-vertical-paddings;
+  background-color: $section-gray;
+
+  &__container {
+    position: relative;
+    padding-left: var(--section-pets-padding-hor);
+    padding-right: var(--section-pets-padding-hor);
+  }
+  
+  &__section-title {
+    @extend %section-title;
+    width: 400px;
+    margin: 0 auto var(--section-vertical-paddings);
+    text-align: center;
+  }
+  
+  &__rest {
+    --height: 48px;
+    @extend %buttons;
+    @include hover(background-color, $pink);
+    margin: 0 auto;
+    width: 263px;
+    height: var(--height);
+    background-color: $pink-grey;
+    border-radius: calc(var(--height) / 2);
+  }
+
+  &__slider {
+    margin-bottom: var(--section-vertical-paddings);
+  }
+
+  @media (max-width: 1200px) {
+    &__container {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+  }
+  @media (max-width: 500px) {
+    &__section-title {
+      width: initial;
+      margin-bottom: var(--section-vertical-paddings-mob);
+    }
+  }
+
+  @media (max-width: 400px) {
+    &__rest {
+      width: 100%;
+      padding: 20px 50px;
+      white-space: nowrap;
+    }
+  }
+}

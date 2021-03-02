@@ -1,0 +1,65 @@
+.about {
+  @extend %section-vertical-paddings;
+
+  &__container {
+    padding: 0 var(--section-about-padding-hor);
+  }
+
+  &__flex-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  &__text-column {
+    padding: 30px 0;
+    width: 417px;
+  }
+
+  &__section-title {
+    @extend %section-title;
+    margin-bottom: 45px;
+  }
+
+  &__text {
+    @extend %text-main;
+    color: $grey;
+  }
+
+  @media (max-width: 1200px) {
+  
+    &__flex-wrapper {
+      justify-content: space-around;
+    }
+  
+    &__container {
+      padding: initial;
+    }
+  }
+
+  @media (max-width: 900px) {
+
+    &__flex-wrapper {
+      flex-direction: column-reverse;
+      align-items: center;
+    }
+
+    &__text-column {
+      width: initial;
+      margin-bottom: 30px;
+      padding: initial;
+    }
+
+    &__section-title {
+      width: 400px;
+      margin: 0 auto 45px;
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 500px) {
+    &__section-title {
+      width: initial;
+      margin-bottom: var(--section-vertical-paddings-mob);
+    }
+  }
+}

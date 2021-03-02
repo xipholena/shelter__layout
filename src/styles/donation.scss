@@ -1,0 +1,102 @@
+.donation {
+  @extend %section-vertical-paddings;
+  background-color: $section-gray;
+
+  &__flex-wrapper {
+    display: flex;
+  }
+
+  &__text-column {
+    max-width: 370px;
+    margin-left: 45px;
+  }
+
+  &__section-title {
+    @extend %section-title;
+    margin-bottom: 25px;
+  }
+
+  &__type-of-bank {
+    @extend %font-georgia;
+    margin-bottom: 13px;
+    line-height: 1.2;
+    font-size: 15px;
+    color: $grey;
+  }
+
+  &__card-example {
+    display: inline-flex;
+    align-items: center;
+    width: 320px;
+    margin-bottom: 25px;
+    padding: 11px 7px;
+    background-color: $pink-grey;
+    border-radius: 9px;
+    
+  }
+  &__card-number {
+    @extend  %font-times;
+    margin-left: 15px;
+    color: $dark-grey;
+  }
+
+  &__legal-information {
+    @extend %font-arial;
+    color: $light-grey;
+    font-size: 12px;
+    font-style: italic;
+  }
+
+  @media (max-width: 900px) {
+    &__flex-wrapper {
+      flex-direction: column-reverse;
+      align-items: center;
+    }
+    &__text-column {
+      max-width: initial;
+      width: 100%;
+      margin: 0 0 30px;
+      text-align: center;
+    }
+    &__section-title {
+      width: 400px;
+      margin: 0 auto var(--section-vertical-paddings);
+    }
+
+    &__legal-information {
+      margin: 0 auto;
+      width: 320px;
+      text-align: initial;
+    }
+
+    &__type-of-bank {
+      margin: 0 auto 13px;
+      width: 320px;
+      text-align: initial;
+    }
+  }
+
+  @media (max-width: 600px) {
+    &__picture {
+      width: 100%;
+    }
+
+    &__pet {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  @media (max-width: 500px) {
+    &__section-title {
+      width: initial;
+      margin-bottom: var(--section-vertical-paddings-mob);
+    }
+
+    &__card-example,
+    &__legal-information,
+    &__type-of-bank {
+      width: 90%;
+    }
+  }
+}

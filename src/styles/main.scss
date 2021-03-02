@@ -1,7 +1,37 @@
 @import "utils";
 @import "fonts";
-@import "typography";
+@import "reset";
 
-body {
-  background: $c-gray;
+@import "container";
+@import "button-top";
+@import "burger";
+
+@import "home";
+@import "header";
+@import "navbar";
+@import "about";
+@import "pets";
+@import "help";
+@import "card";
+@import "slider";
+@import "donation";
+@import "footer";
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+a {
+  cursor: pointer;
+}
+
+:root {
+  --section-pets-padding-hor: 130px;
+  --card-padding-hor: 40px;
+  --section-about-padding-hor: calc(
+    var(--section-pets-padding-hor) + var(--card-padding-hor)
+  );
+  --section-vertical-paddings: 70px;
+  --section-vertical-paddings-mob: 35px;
 }
