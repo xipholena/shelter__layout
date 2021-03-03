@@ -1,7 +1,3 @@
----
-permalink: /index.html
----
-
 # Cozy House Landing page 
 Stack: HTML, SCSS, JS, JQuery, BEM   
 Fully responsive layout was made by using Flexbox (mobiles, tablets, laptops, monitors)
