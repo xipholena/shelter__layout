@@ -2,7 +2,7 @@
   @extend %section-vertical-paddings;
   background-color: $section-gray;
 
-  &__flex-wrapper {
+  &__container {
     display: flex;
   }
 
@@ -32,8 +32,8 @@
     padding: 11px 7px;
     background-color: $pink-grey;
     border-radius: 9px;
-    
   }
+
   &__card-number {
     @extend  %font-times;
     margin-left: 15px;
@@ -48,16 +48,18 @@
   }
 
   @media (max-width: 900px) {
-    &__flex-wrapper {
+    &__container {
       flex-direction: column-reverse;
       align-items: center;
     }
+
     &__text-column {
       max-width: initial;
       width: 100%;
       margin: 0 0 30px;
       text-align: center;
     }
+
     &__section-title {
       width: 400px;
       margin: 0 auto var(--section-vertical-paddings);

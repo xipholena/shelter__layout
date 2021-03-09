@@ -14,15 +14,8 @@
     line-height: 2.25;
   }
 
-  &__link {
-    --height: 48px;
-    @extend %buttons;
-    @include hover(background-color, $pink-grey);
+  &__button {
     margin: 0 auto;
-    width: 184px;
-    height: var(--height);
-    border: 2px solid $pink-grey;
-    border-radius: calc(var(--height) / 2);
   }
 
   &__image {

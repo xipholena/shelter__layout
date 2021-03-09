@@ -7,7 +7,7 @@ const navbar = document.querySelector('.navbar');
 
 const transformHandler = () => {
   burger.classList.toggle('burger--active');
-  navbar.classList.toggle('navbar--active');
+  navbar.classList.toggle('page__navbar-upper--active');
 };
 
 burger.addEventListener('click', transformHandler);
@@ -18,48 +18,39 @@ const clickOnItemHandler = (e) => {
   if (!item || !navbar.contains(item)) {
     return;
   }
-  navbar.classList.remove('navbar--active');
+  navbar.classList.remove('page__navbar-upper--active');
   burger.classList.remove('burger--active');
 };
 
 navbar.addEventListener('click', clickOnItemHandler);
 
-let maxSlides;
-const quantityHandler = () => {
-  if (window.innerWidth >= 1201) {
-    maxSlides = 3;
-  }
 
-  if (window.innerWidth < 1200) {
-    maxSlides = 2;
-  }
-
-  if (window.innerWidth < 800) {
-    maxSlides = 1;
-  }
-};
-
-quantityHandler();
-window.addEventListener('resize', quantityHandler);
-
-$(document).ready(function() {
-  $('.slider__wrapper').bxSlider({
-    slideSelector: '.slider__slide',
-    nextSelector: '.slider__control-next',
-    prevSelector: '.slider__control-prev',
-    pager: false,
-    wrapperClass: 'slider__wrapper',
-    minSlides: 1,
-    maxSlides: maxSlides,
-    slideWidth: 270,
-    slideMargin: 50,
+$(document).ready(function(){
+  $('.slider__wrapper').slick({
+    prevArrow: '.slider__control-prev',
+    nextArrow: '.slider__control-next',
+    slidesToShow: 3,
+    infinite: true,
+    variableWidth: true,
+    responsive: [
+      {
+        breakpoint: 1200, 
+        settings: {
+          slidesToShow: 2,
+        }
+      }, 
+      {
+        breakpoint: 700, 
+        settings: {
+          slidesToShow: 1,
+        }
+      }
+    ]
   });
 });
-
 const buttonPositionHandler = () => {
   const getScrollbarWidth = () => {
     const div = document.createElement('div');
-
     div.style.overflowY = 'scroll';
     div.style.width = '50px';
     div.style.height = '50px';
@@ -99,15 +90,52 @@ window.addEventListener('scroll', scrollFromTop);
 
 const calculateNavbarPadding = () => {
   if (window.innerWidth < 1024) {
-    const navbar2 = document.querySelector('.navbar');
+    const navbar = document.querySelector('.navbar');
     const container = document.querySelector('.container');
-
-    navbar2.style.paddingLeft = `${(
+    console.log(window.innerWidth, container.clientWidth);
+    navbar.style.paddingLeft = `${(
       window.innerWidth - container.clientWidth
     ) / 2}px`;
   }
+  
 };
 
 calculateNavbarPadding();
 
 window.addEventListener('resize', calculateNavbarPadding);
+
+const setNavbarTopPosition = () => {
+  const navbarList = document.querySelector('.navbar__list');
+  const header = document.querySelector('.page__header-upper');
+  const listItem = document.querySelector('.navbar__item');
+
+  const headerHeight = header.clientHeight;
+  const headerPositionTop = parseInt(window.getComputedStyle(header).getPropertyValue('top'));
+  const listItemHeight = listItem.clientHeight;
+
+  if(window.innerWidth <= 700){
+    console.log(headerHeight,headerPositionTop,listItemHeight);
+    navbarList.style.paddingTop = `${headerHeight + headerPositionTop + listItemHeight / 2}px`;
+  } else if (window.innerWidth > 700 && window.innerWidth <= 1023){
+    navbarList.style.paddingTop = `${headerPositionTop}px`;
+  } else {
+    navbarList.style.paddingTop = `initial`;
+  }
+}
+setNavbarTopPosition();
+window.addEventListener('resize', setNavbarTopPosition);
+
+const setFirstScreenHeight = () => {
+  const header = document.querySelector('.header');
+  const textBlock = document.querySelector('.home__text-block');
+  const screen = document.querySelector('.home');
+
+  if (window.innerHeight > screen.clientHeight) {
+      screen.style.height = `100vh`;
+  } else {
+    textBlock.style.marginTop = `${header.clientHeight + 20}px`
+  }
+}
+
+setFirstScreenHeight();
+window.addEventListener('resize', setFirstScreenHeight);

@@ -6,6 +6,7 @@
     position: relative;
     padding-left: var(--section-pets-padding-hor);
     padding-right: var(--section-pets-padding-hor);
+    text-align: center;
   }
   
   &__section-title {
@@ -15,15 +16,8 @@
     text-align: center;
   }
   
-  &__rest {
-    --height: 48px;
-    @extend %buttons;
-    @include hover(background-color, $pink);
+  &__button {
     margin: 0 auto;
-    width: 263px;
-    height: var(--height);
-    background-color: $pink-grey;
-    border-radius: calc(var(--height) / 2);
   }
 
   &__slider {

@@ -5,7 +5,7 @@
   background-size: cover;
   background-position-x: center;
 
-  &__flex-wrapper {
+  &__container {
     display: flex;
   }
 
@@ -63,7 +63,7 @@
       margin: 0 0 30px;
     }
 
-    &__flex-wrapper {
+    &__container {
       flex-direction: column;
     }
   }

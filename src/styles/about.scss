@@ -23,10 +23,12 @@
   &__text {
     @extend %text-main;
     color: $grey;
+    &:nth-of-type(2) {
+      margin-top: 2em;
+    }
   }
 
   @media (max-width: 1200px) {
-  
     &__flex-wrapper {
       justify-content: space-around;
     }

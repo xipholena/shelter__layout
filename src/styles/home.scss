@@ -1,14 +1,17 @@
 .home {
   @extend %section-vertical-paddings;
-  height: 100vh;
   background-image: url("../images/home-background.png");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: center top;
 
+  &__container {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
   &__text-block {
     width: 445px;
-    margin-top: 11.7vw;
   }
 
   &__site-title {
@@ -25,40 +28,9 @@
   }
 
   &__button {
-    --height: 52px;
-    @extend %buttons;
-    @include hover(background-color, $pink);
     margin-top: 45px;
-    width: 205px;
-    height: var(--height);
-    background-color: $pink-grey;
-    border-radius: calc(var(--height) / 2);
   }
 
-  @media (min-width: 1920px) {
-    &__text-block {
-      margin-top: 225px;
-    }
-  }
-
-  @media (max-width: 1400px) {
-    &__text-block {
-      margin-top: 7vw;
-    }
-  }
-
-  @media (max-width: 1200px) {
-    &__slogan,
-    &__button {
-      margin-top: 1vw;
-    }
-  }
-
-  @media (max-width: 1000px) {
-    &__site-title {
-      line-height: 1;
-    }
-  }
   @media (max-width: 850px) {
     & {
       background-image: none;
@@ -68,17 +40,9 @@
     &__text-block {
       width: 90%;
       text-align: center;
-      margin: 50px auto 0;
+      margin: 0 auto;
     }
 
-    &__button {
-      display: inline-block;
-    }
-
-    &__slogan,
-    &__button {
-      margin-top: 30px;
-    }
   }
 
   @media (max-width: 500px) {

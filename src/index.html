@@ -5,88 +5,85 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shelter</title>
     <link rel="stylesheet" href="./styles/main.scss">
-    <link rel="stylesheet" href="./styles/jquery.bxslider.min.css">
-    <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script defer src="./scripts/jquery.bxslider.js"></script>
+    <link rel="stylesheet" type="text/css" href="./styles/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="./styles/slick-theme.css"/>
   </head>
-  <body>
+  <body class="page">
+    <header class="header page__header-upper">
+      <div class="container header__container">
+        <a
+          href="/"
+          class="header__logo"
+        >
+          <p class="header__site-name">Cozy House</p>
+          <p class="header__logo-description">Shelter for pets in Boston</p>
+        </a>
+        <nav class="navbar page__navbar-upper">
+          <ul class="navbar__list">
+            <li class="navbar__item">
+              <a
+                href="#about"
+                class="navbar__link"
+              >
+                About the shelter
+              </a>
+            </li>
+            <li class="navbar__item">
+              <a
+                href="#pets"
+                class="navbar__link"
+              >
+                Our pets
+              </a>
+            </li>
+            <li class="navbar__item">
+              <a
+                href="#help"
+                class="navbar__link"
+              >
+                To help the shelter
+              </a>
+            </li>
+            <li class="navbar__item">
+              <a
+                href="#contacts"
+                class="navbar__link"
+              >
+                Contacts
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <div class="burger">
+          <div class="burger__layer"></div>
+          <div class="burger__layer"></div>
+          <div class="burger__layer"></div>
+        </div>
+      </div>
+    </header>
     <main>
       <section
         class="home"
         id="home"
       >
-        <header class="header">
-          <div class="container">
-            <div class="header__flex-wrapper">
-              <a
-                href="/"
-                class="header__logo"
-              >
-                <p class="header__site-name">Cozy House</p>
-                <p class="header__logo-description">Shelter for pets in Boston</p>
-              </a>
-              <nav class="navbar">
-                <ul class="navbar__list">
-                  <li class="navbar__item">
-                    <a
-                      href="#about"
-                      class="navbar__link"
-                    >
-                      About the shelter
-                    </a>
-                  </li>
-                  <li class="navbar__item">
-                    <a
-                      href="#pets"
-                      class="navbar__link"
-                    >
-                      Our pets
-                    </a>
-                  </li>
-                  <li class="navbar__item">
-                    <a
-                      href="#help"
-                      class="navbar__link"
-                    >
-                      To help the shelter
-                    </a>
-                  </li>
-                  <li class="navbar__item">
-                    <a
-                      href="#contacts"
-                      class="navbar__link"
-                    >
-                      Contacts
-                    </a>
-                  </li>
-                </ul>
-              </nav>
-              <div class="burger">
-                <div class="burger__layer"></div>
-                <div class="burger__layer"></div>
-                <div class="burger__layer"></div>
-              </div>
-            </div>
-
-          </div>
-        </header>
-        <div class="container">
+        
+        <div class="container home__container">
           <div class="home__text-block">
-            <h1 class="home__site-title">
-              Not only people need a house
-            </h1>
-            <p class="home__slogan">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras gravida
-              est in porttitor  porttitor. Duis sodales elementum ipsum, vehicula
-              condimentum erat fringilla et.
-            </p>
-            <a
-              href="#"
-              class="home__button"
-            >
-              Make a friends
-            </a>
-          </div>
+              <h1 class="home__site-title">
+                Not only people need a house
+              </h1>
+              <p class="home__slogan">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras gravida
+                est in porttitor  porttitor. Duis sodales elementum ipsum, vehicula
+                condimentum erat fringilla et.
+              </p>
+              <a
+                href="#pets"
+                class="button button--pink-tall home__button"
+              >
+                Make a friends
+              </a>
+            </div>
         </div>
         <a
           href="#home"
@@ -94,7 +91,7 @@
         >
         </a>
       </section>
-      <!--=========================== END section home =============================-->
+      
       <section
         class="about"
         id="about"
@@ -103,9 +100,8 @@
           <div class="about__flex-wrapper">
             <div class="about__picture">
               <img
-
-              src="./images/about_pets.png"
-              alt="cat and dog"
+                src="./images/about_pets.png"
+                alt="cat and dog"
               >
             </div>
             <div class="about__text-column">
@@ -114,14 +110,15 @@
               </h2>
               <p class="about__text">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce efficitur blandit condimentum. Proin accumsan lorem vel gravida fringilla. Suspendisse potenti. Mauris ut pulvinar nunc.
-                <br><br>
+              </p>
+              <p class="about__text">
                 Donec consectetur, diam in porta tempus, urna ligula vestibulum nibh, ac ornare felis justo nec leo. Praesent mattis nibh quis ultrices pharetra. Morbi tempus at ante sit amet tristique. Maecenas dignissim justo orci, in laoreet urna dapibus nec. Praesent quis tortor faucibus, tristique ante vitae, dignissim lorem. Sed at ligula et sem mattis gravida ac vel erat.
               </p>
             </div>
           </div>
         </div>
       </section>
-      <!--=========================== END section about =============================-->
+
       <section
         class="pets"
         id="pets"
@@ -144,7 +141,7 @@
                   Katerine
                 </p>
                 <a
-                  class="card__link"
+                  class="button button--white card__button"
                   href="#"
                 >
                   Learn more
@@ -161,7 +158,7 @@
                   Jeniffer
                 </p>
                 <a
-                  class="card__link"
+                  class="button button--white card__button"
                   href="#"
                 >
                   Learn more
@@ -178,7 +175,24 @@
                   Woody
                 </p>
                 <a
-                  class="card__link"
+                  class="button button--white card__button"
+                  href="#"
+                >
+                  Learn more
+                </a>
+              </div>
+
+              <div class="card slider__slide">
+                <img
+                  class="card__image"
+                  src="./images/pets_jennifer.png"
+                  alt="dog jeniffer"
+                >
+                <p class="card__pet-name">
+                  Jeniffer
+                </p>
+                <a
+                  class="button button--white card__button"
                   href="#"
                 >
                   Learn more
@@ -188,14 +202,14 @@
             </div>
           </div>
           <a
-            class="pets__rest"
+            class="button button--pink-wide pets__button"
             href="#"
           >
             Get to know the rest
           </a>
         </div>
       </section>
-      <!--=========================== END section pets =============================-->
+
       <section
         class="help"
         id="help"
@@ -288,50 +302,47 @@
           </ul>
         </div>
       </section>
-      <!--=========================== END section help =============================-->
+
       <section
         class="donation"
         id="donation"
       >
-        <div class="container">
-          <div class="donation__flex-wrapper">
-            <div class="donation__picture">
+        <div class="container donation__container">
+          <div class="donation__picture">
+            <img
+              class="donation__pet"
+              src="./images/donation__dog.png"
+              alt="dog"
+            >
+          </div>
+          <div class="donation__text-column">
+            <h2 class="donation__section-title">
+              In addition, you can make a donation
+            </h2>
+            <p class="donation__type-of-bank">
+              Name of the bank / Type of bank account
+            </p>
+            <div class="donation__card-example">
               <img
-                class="donation__pet"
-                src="./images/donation__dog.png"
-                alt="dog"
+                src="./images/donation_credit-card.png"
+                alt="credit card icon"
               >
-            </div>
-            <div class="donation__text-column">
-              <h2 class="donation__section-title">
-                In addition, you can make a donation
-              </h2>
-              <p class="donation__type-of-bank">
-                Name of the bank / Type of bank account
-              </p>
-              <div class="donation__card-example">
-                <img
-                  src="./images/donation_credit-card.png"
-                  alt="credit card icon"
-                >
-                <p class="donation__card-number">
-                  8380 2880 8028 8791 7435
-                </p>
-              </div>
-              <p class="donation__legal-information">
-                Legal information and lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a ipsum at libero sagittis dignissim sed
-                ac diam. Praesent ultrices maximus tortor et vulputate. Interdum
-                et malesuada fames ac ante ipsum primis in faucibus.
+              <p class="donation__card-number">
+                8380 2880 8028 8791 7435
               </p>
             </div>
+            <p class="donation__legal-information">
+              Legal information and lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a ipsum at libero sagittis dignissim sed
+              ac diam. Praesent ultrices maximus tortor et vulputate. Interdum
+              et malesuada fames ac ante ipsum primis in faucibus.
+            </p>
           </div>
         </div>
       </section>
-      <!--=========================== END section donation =============================-->
+
     </main>
     <footer class="footer">
-      <div class="container">
-        <div class="footer__flex-wrapper">
+      <div class="container footer__container">
           <div 
             class="footer__contacts-online"
             id="contacts"
@@ -356,7 +367,7 @@
             <a
               title="Call us!"
               class="footer__contact-info"
-              tel="+136745677554"
+              href="tel:+136745677554"
             >
               <img
                 class="footer__contact-icon"
@@ -401,9 +412,13 @@
               </p>
             </a>
           </div>
-        </div>
       </div>
     </footer>
-    <script defer src="scripts/main.js"></script>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="./scripts/main.js"></script>
   </body>
 </html>
+
+

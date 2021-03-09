@@ -3,6 +3,10 @@
     margin: 0 auto;
   }
 
+  &__slide{
+    margin: 0 26px;
+  }
+
   &__control-prev,
   &__control-next {
     @include hover(background-color, $pink-grey);
@@ -30,10 +34,4 @@
     background-repeat: no-repeat;
   }
 }
-.bx-next,
-.bx-prev{
-  width: 100%;
-  height: 100%;
-  display: block;
-  color: transparent;
-}
+

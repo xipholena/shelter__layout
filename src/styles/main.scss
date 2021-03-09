@@ -1,10 +1,14 @@
-@import "utils";
-@import "fonts";
+@import "utils/vars";
+@import "utils/mixins";
+@import "utils/extends";
+
 @import "reset";
+@import "normalize";
 
 @import "container";
 @import "button-top";
 @import "burger";
+@import "button";
 
 @import "home";
 @import "header";
@@ -17,14 +21,6 @@
 @import "donation";
 @import "footer";
 
-* {
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-}
-
-a {
-  cursor: pointer;
-}
 
 :root {
   --section-pets-padding-hor: 130px;
@@ -34,4 +30,25 @@ a {
   );
   --section-vertical-paddings: 70px;
   --section-vertical-paddings-mob: 35px;
+}
+
+.page {
+  &__header-upper {
+    position: absolute;
+    top: var(--section-vertical-paddings);
+    left: 0;
+    right: 0;
+  }
+
+  &__navbar-upper.page__navbar-upper--active {
+    top: calc((var(--section-vertical-paddings)) * -1);
+  }
+
+  @media (max-width: 1023px) {
+    &__navbar-upper {
+      position: absolute;
+      top: -130vh;
+      left: 0;
+    }
+  }
 }
