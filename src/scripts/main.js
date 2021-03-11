@@ -24,7 +24,6 @@ const clickOnItemHandler = (e) => {
 
 navbar.addEventListener('click', clickOnItemHandler);
 
-
 $(document).ready(function(){
   $('.slider__wrapper').slick({
     prevArrow: '.slider__control-prev',
@@ -92,7 +91,6 @@ const calculateNavbarPadding = () => {
   if (window.innerWidth < 1024) {
     const navbar = document.querySelector('.navbar');
     const container = document.querySelector('.container');
-    console.log(window.innerWidth, container.clientWidth);
     navbar.style.paddingLeft = `${(
       window.innerWidth - container.clientWidth
     ) / 2}px`;
@@ -113,16 +111,17 @@ const setNavbarTopPosition = () => {
   const headerPositionTop = parseInt(window.getComputedStyle(header).getPropertyValue('top'));
   const listItemHeight = listItem.clientHeight;
 
-  if(window.innerWidth <= 700){
-    console.log(headerHeight,headerPositionTop,listItemHeight);
+  if(window.innerWidth <= 700) {
     navbarList.style.paddingTop = `${headerHeight + headerPositionTop + listItemHeight / 2}px`;
   } else if (window.innerWidth > 700 && window.innerWidth <= 1023){
-    navbarList.style.paddingTop = `${headerPositionTop}px`;
+    navbarList.style.paddingTop = `${headerPositionTop * 2}px`;
   } else {
     navbarList.style.paddingTop = `initial`;
   }
 }
+
 setNavbarTopPosition();
+
 window.addEventListener('resize', setNavbarTopPosition);
 
 const setFirstScreenHeight = () => {
@@ -130,10 +129,15 @@ const setFirstScreenHeight = () => {
   const textBlock = document.querySelector('.home__text-block');
   const screen = document.querySelector('.home');
 
-  if (window.innerHeight > screen.clientHeight) {
+  if (window.innerHeight >= screen.clientHeight) {
       screen.style.height = `100vh`;
-  } else {
-    textBlock.style.marginTop = `${header.clientHeight + 20}px`
+  } 
+
+  const headerCoords = header.getBoundingClientRect().bottom + window.pageYOffset;
+  const textBlockCoords = textBlock.getBoundingClientRect().top + window.pageYOffset;
+
+  if (headerCoords > textBlockCoords) {
+    textBlock.style.marginTop = `${header.clientHeight + (headerCoords - textBlockCoords) + 30}px`
   }
 }
 

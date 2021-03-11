@@ -1,11 +1,9 @@
 .help {
   @extend %section-vertical-paddings;
+  padding-bottom: 0;
 
   &__section-title {
     @extend %section-title;
-    margin: 0 auto;
-    width: 325px;
-    text-align: center;
   }
 
   &__flex-wrapper {
@@ -17,7 +15,7 @@
 
   &__card {
     max-width: 175px;
-    margin-top: var(--section-vertical-paddings);
+    margin-bottom: var(--section-vertical-paddings);
     margin-left: 50px;
     margin-right: 50px;
     text-align: center;
@@ -35,8 +33,8 @@
   }
 
   @media (max-width: 550px) {
-    &__section-title {
-      margin-bottom: var(--section-vertical-paddings-mob);
+    & {
+     padding-bottom: var(--section-vertical-paddings-mob);
     }
 
     &__flex-wrapper {
@@ -47,25 +45,13 @@
       display: flex;
       align-items: center;
       margin: 10px 0;
+      max-width: initial;
     }
 
     &__icon {
       width: 50px;
       height: 50px;
       margin: 0 15px 0 0;
-    }
-  }
-
-  @media (max-width: 500px) {
-    &__section-title {
-      width: initial;
-      margin-bottom: var(--section-vertical-paddings-mob);
-    }
-  }
-
-  @media (max-width: 375px) {
-    &__flex-wrapper {
-      column-count: 1;
     }
   }
 }

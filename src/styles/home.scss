@@ -23,12 +23,8 @@
 
   &__slogan {
     @extend %text-main;
-    margin-top: 45px;
+    margin-bottom: 45px;
     color: $light-grey;
-  }
-
-  &__button {
-    margin-top: 45px;
   }
 
   @media (max-width: 850px) {
@@ -42,7 +38,6 @@
       text-align: center;
       margin: 0 auto;
     }
-
   }
 
   @media (max-width: 500px) {

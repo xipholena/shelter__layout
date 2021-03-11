@@ -6,6 +6,10 @@
     display: flex;
   }
 
+  &__picture {
+    max-width: 498px;
+  }
+
   &__text-column {
     max-width: 370px;
     margin-left: 45px;
@@ -13,7 +17,7 @@
 
   &__section-title {
     @extend %section-title;
-    margin-bottom: 25px;
+   // margin-bottom: 25px;
   }
 
   &__type-of-bank {
@@ -60,11 +64,6 @@
       text-align: center;
     }
 
-    &__section-title {
-      width: 400px;
-      margin: 0 auto var(--section-vertical-paddings);
-    }
-
     &__legal-information {
       margin: 0 auto;
       width: 320px;
@@ -90,11 +89,6 @@
   }
 
   @media (max-width: 500px) {
-    &__section-title {
-      width: initial;
-      margin-bottom: var(--section-vertical-paddings-mob);
-    }
-
     &__card-example,
     &__legal-information,
     &__type-of-bank {

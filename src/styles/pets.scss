@@ -11,9 +11,8 @@
   
   &__section-title {
     @extend %section-title;
-    width: 400px;
-    margin: 0 auto var(--section-vertical-paddings);
-    text-align: center;
+    //width: 400px;
+    //margin: 0 auto var(--section-vertical-paddings);
   }
   
   &__button {
@@ -28,12 +27,6 @@
     &__container {
       padding-left: 40px;
       padding-right: 40px;
-    }
-  }
-  @media (max-width: 500px) {
-    &__section-title {
-      width: initial;
-      margin-bottom: var(--section-vertical-paddings-mob);
     }
   }
 

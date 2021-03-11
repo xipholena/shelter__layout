@@ -1,6 +1,5 @@
 .about {
   @extend %section-vertical-paddings;
-
   &__container {
     padding: 0 var(--section-about-padding-hor);
   }
@@ -10,6 +9,10 @@
     justify-content: space-between;
   }
   
+  &__picture {
+    max-width: 296px;
+  }
+
   &__text-column {
     padding: 30px 0;
     width: 417px;
@@ -17,14 +20,13 @@
 
   &__section-title {
     @extend %section-title;
-    margin-bottom: 45px;
   }
 
   &__text {
     @extend %text-main;
     color: $grey;
-    &:nth-of-type(2) {
-      margin-top: 2em;
+    &:nth-of-type(1) {
+      margin-bottom: 2em;
     }
   }
 
@@ -49,12 +51,6 @@
       width: initial;
       margin-bottom: 30px;
       padding: initial;
-    }
-
-    &__section-title {
-      width: 400px;
-      margin: 0 auto 45px;
-      text-align: center;
     }
   }
 
