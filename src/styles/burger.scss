@@ -1,0 +1,34 @@
+.burger {
+  position: relative;
+  display: none;
+  width: 50px;
+  height: 50px;
+
+  &__layer {
+    content: "";
+    position: absolute;
+    background-color: $light-grey;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    border-radius: 1.5px;
+    transition: transform 0.3s, top 0.3s, opacity 0.3s;
+    @each $counter, $coordinate  in $coordinates {
+      &:nth-of-type(#{$counter}) {
+        top: $coordinate;
+      }
+    }
+  }
+
+  @each $counter, $transform, $opacity in $transforms {
+    &--active .burger__layer:nth-of-type(#{$counter}) {
+      transform: rotateZ(#{$transform}deg);
+      top: 50%;
+      opacity: $opacity;
+    }
+  }
+
+  @media (max-width: 1023px) {
+    display: block;
+  }
+}

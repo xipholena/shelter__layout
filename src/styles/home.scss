@@ -1,0 +1,58 @@
+.home {
+  @extend %section-vertical-paddings;
+  background-image: url("../images/home-background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+  &__text-block {
+    width: 445px;
+  }
+
+  &__site-title {
+    @extend %font-georgia;
+    font-size: 44px;
+    line-height: 1.3;
+    color: $white;
+  }
+
+  &__slogan {
+    @extend %text-main;
+    margin-bottom: 45px;
+    color: $light-grey;
+  }
+
+  @media (max-width: 850px) {
+    & {
+      background-image: none;
+      @include gradient;
+    }
+
+    &__text-block {
+      width: 90%;
+      text-align: center;
+      margin: 0 auto;
+    }
+  }
+
+  @media (max-width: 500px) {
+    &__site-title {
+      font-size: 36px;
+    }
+
+    &__text-block {
+      width: initial;
+    }
+  }
+
+  @media (max-width: 400px) {
+    &__site-title {
+      font-size: 29px;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+.button {
+  @extend %buttons;
+  &--pink-tall,
+  &--pink-wide {
+    @include hover(background-color, $pink);
+    background-color: $pink-grey;
+    border-radius: 26px;
+  }
+
+  &--white {
+    @include hover(background-color, $pink-grey);
+    border: 2px solid $pink-grey;
+    border-radius: 27px;
+    white-space: nowrap; 
+  }
+}

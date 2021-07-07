@@ -1,7 +1,90 @@
-@import "utils";
-@import "fonts";
-@import "typography";
+@import "utils/vars";
+@import "utils/mixins";
+@import "utils/extends";
 
-body {
-  background: $c-gray;
+@import "reset";
+@import "normalize";
+
+@import "container";
+@import "button-top";
+@import "burger";
+@import "button";
+
+@import "home";
+@import "header";
+@import "navbar";
+@import "about";
+@import "pets";
+@import "help";
+@import "card";
+@import "slider";
+@import "donation";
+@import "footer";
+
+
+:root {
+  --section-pets-padding-hor: 130px;
+  --card-padding-hor: 40px;
+  --section-about-padding-hor: calc(
+    var(--section-pets-padding-hor) + var(--card-padding-hor)
+  );
+  --section-vertical-paddings: 70px;
+  --section-vertical-paddings-mob: 35px;
 }
+
+.page {
+  &__header-upper {
+    position: absolute;
+    top: var(--section-vertical-paddings);
+    left: 0;
+    right: 0;
+  }
+
+  &__navbar-upper.page__navbar-upper--active {
+    top: calc((var(--section-vertical-paddings)) * -1);
+  }
+
+  &__title-wrap--uncentered,
+  &__title-wrap--upper,
+  &__title-wrap--lower {
+    margin-bottom: 27px;
+  }
+
+  &__title-wrap--centered {
+    width: 400px;
+    margin: 0 auto var(--section-vertical-paddings);
+    text-align: center;
+  }
+  
+  @media (max-width: 1023px) {
+    &__navbar-upper {
+      position: absolute;
+      top: -130vh;
+      left: 0;
+    }
+  }
+  @media (max-width: 1023px) and (orientation: landscape) {
+    &__navbar-upper {
+      top: -130vw;
+    }
+  }
+  @media (max-width: 900px) {
+    &__title-wrap--uncentered {
+      margin: 0 auto var(--section-vertical-paddings);
+      width: 400px;
+      text-align: center;
+    }
+  }
+  @media (max-width: 500px) {
+    &__title-wrap--uncentered {
+      margin: 0 auto var(--section-vertical-paddings-mob);
+      width: initial;
+    }
+
+    &__title-wrap--centered {
+      width: initial;
+      margin-bottom: var(--section-vertical-paddings-mob);
+    }
+  }
+}
+
